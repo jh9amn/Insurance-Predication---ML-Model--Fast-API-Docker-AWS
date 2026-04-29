@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 
-APP_URL = "http://localhost:8000"
+APP_URL = "http://18.61.35.13:8000"
 
 st.title("Insurance Premium Prediction")
 st.markdown("Enter the details below to predict your insurance premium:")
@@ -12,7 +12,7 @@ height = st.number_input("Height (m)", min_value=0.5, value=1.75)
 income_lpa = st.number_input("Income (LPA)", min_value=0.0, value=10.0)
 smoker = st.selectbox("Are you a smoker?", ["Yes", "No"])
 city = st.text_input("City", value="New York")
-occupation = st.text_input("Occupation",    
+occupation = st.selectbox("Occupation",    
                         ['retired', 'freelancer', 'student', 'government_job', 'business_owner', 'unemployed', 'private_job'])
 
 if st.button("Predict Premium"):
